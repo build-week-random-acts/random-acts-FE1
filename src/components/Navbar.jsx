@@ -1,0 +1,1 @@
+//contain our links -> contacts, acts, about page info
