@@ -2,28 +2,36 @@ import React, { useState } from 'react';
 
 const ContactsForm = (props) => {
     const [contact, setContact] = useState({name:'', email:'', phone:'', address:''});
+
+    const handleChange = event => {
+        setContact({...contact, [event.target.name]: event.target.value});
+    };
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        
+    }
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <input placeholder='name'
                    value={contact.name}
-                   onChange={event => {
-                    setContact({...contact, name: event.target.value});
-                   }}/>
+                   name='name'
+                   onChange={handleChange}/>
             <input placeholder='email' 
                    value={contact.email}
-                   onChange={event => {
-                    setContact({...contact, email: event.target.value});
-                   }}/>
+                   name='email'
+                   type='email'
+                   onChange={handleChange}/>
             <input placeholder='phone' 
                    value={contact.phone}
-                   onChange={event => {
-                    setContact({...contact, phone: event.target.value});
-                   }}/>
+                   name='phone'
+                   type='tel'
+                   onChange={handleChange}/>
             <input placeholder='address' 
                    value={contact.address}
-                   onChange={event => {
-                    setContact({...contact, name: event.target.value});
-                   }}/>
+                   name='address'
+                   onChange={handleChange}/>
+                   <button type='submit'>Add Contact</button>
         </form>
     );
 };
