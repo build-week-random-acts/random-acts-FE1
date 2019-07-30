@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const ContactsForm = (props) => {
+    const { setContacts } = props;
     const [contact, setContact] = useState({name:'', email:'', phone:'', address:''});
 
     const handleChange = event => {
@@ -9,8 +10,9 @@ const ContactsForm = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        
-    }
+        setContacts(contacts => [...contacts, contact]);
+        setContact({name:'', email:'', phone:'', address:''});
+    };
     return(
         <form onSubmit={handleSubmit}>
             <input placeholder='name'

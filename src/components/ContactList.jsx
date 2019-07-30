@@ -18,7 +18,7 @@ const ContactList = (props) =>{
                 <button>+</button>
               </div>
               <div className='addForm'>
-                <ContactsForm />
+                <ContactsForm setContacts={setContacts}/>
                 </div>
               </div>
 
