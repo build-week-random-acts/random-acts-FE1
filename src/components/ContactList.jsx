@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import ContactCard from './ContactCard';
+
+
 
 
 const ContactList = (props) =>{
-    return(
+  const [contacts, setContacts]   = useState([{name:'Name', email: 'email@wherever.com', phone: '(800)555-0000', address:'13 Anywhere street, Everytown, tn 37334'}
+
+  ]);
+  return(
         <container className='contactList'>
             <h2>My Contacts</h2>
             <Accordion >
@@ -17,8 +22,8 @@ const ContactList = (props) =>{
                 <Card.Body>full contact card here</Card.Body>
               </Accordion.Collapse>
             </Card>
-            
           </Accordion>
+          <ContactCard contact = {{name:'Name', email: 'email@wherever.com', phone: '(800)555-0000', address:'13 Anywhere street, Everytown, tn 37334'}}/>
         </container>
     )
 };
