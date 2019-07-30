@@ -3,14 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+    "bootstrap": "^4.3.1",
+    "gulp": "^4.0.2",
+=======
     "axios": "^0.19.0",
     "formik": "^1.5.8",
+>>>>>>> master
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "^16.8.6",
+<<<<<<< HEAD
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "semantic-ui-react": "^0.87.3"
+=======
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "yup": "^0.27.0"
+>>>>>>> master
   },
   "scripts": {
     "start": "react-scripts start",

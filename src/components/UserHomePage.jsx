@@ -1,16 +1,24 @@
-//where user is taken after successfully logging in
-// contain list of acts chosen by user -> checklist
-// link to contacts -> routes
-// link to random acts -> routes
 
-import React from 'react';
+import React from 'react'
+import ContactList from './ContactList'
+
 
 const UserHomePage = () => {
-  return (
-    <div>
-      <h1>if you are logged in you can see this successfully!</h1>
-    </div>
-  );
-};
-
+    return(
+        <div>
+            <div className='homepage top'>Navbar and splash here</div>
+            <div className='homepage bottom'>
+                <container className='mainBox'>
+                    <div className='subnav'>
+                       subnav goes here
+                    </div>
+                    <div className='componentBox'>
+                      <ContactList />  
+                    </div>
+                </container>
+            </div>
+        </div>
+    );
+}
 export default UserHomePage;
+
