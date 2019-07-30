@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <LoginForm />
-      <ProtectedRoute exact path='UserHomePage' component={UserHomePage}/>
+      {/* <ProtectedRoute exact path='UserHomePage' component={UserHomePage}/> */}
       {/* <UserHomePage/> */}
     </div>
   );
