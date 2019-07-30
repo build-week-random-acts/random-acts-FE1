@@ -1,9 +1,11 @@
 import React from 'react';
+import LoginForm from './components/LoginForm';
 
 function App() {
   return (
     <div>
-      <h1>test</h1>
+      <LoginForm />
+      {/* <UserHomePage/> */}
     </div>
   );
 }
