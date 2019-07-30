@@ -1,3 +1,4 @@
+
 import React from 'react'
 import ContactList from './ContactList'
 
@@ -20,14 +21,4 @@ const UserHomePage = () => {
     );
 }
 export default UserHomePage;
-
-//navbar for login and faq
-//api call for splash image
-//container with subnav for routes
-//list populated with user's chosen acts
-//generate button
-//contacts and acts routed here
-
-
-
 
