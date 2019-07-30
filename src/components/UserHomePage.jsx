@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ContactList from './ContactList'
 
 
 const UserHomePage = () => {
@@ -12,7 +12,7 @@ const UserHomePage = () => {
                        subnav goes here
                     </div>
                     <div className='componentBox'>
-                        
+                      <ContactList />  
                     </div>
                 </container>
             </div>
