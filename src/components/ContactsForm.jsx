@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-
+import { Route, Link } from 'react-router-dom';
 const ContactsForm = (props) => {
-    const { setContacts } = props;
+    const { submitContacts } = props;
     const [contact, setContact] = useState({name:'', email:'', phone:'', address:''});
+
 
     const handleChange = event => {
         setContact({...contact, [event.target.name]: event.target.value});
@@ -10,11 +11,11 @@ const ContactsForm = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        setContacts(contacts => [...contacts, contact]);
+        submitContacts(contact);
         setContact({name:'', email:'', phone:'', address:''});
     };
     return(
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>  
             <input placeholder='name'
                    value={contact.name}
                    name='name'
