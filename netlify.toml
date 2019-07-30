@@ -1,4 +1,4 @@
 [build]
 base="random-acts-frontend/"
-publish="build/"
+publish="random-acts-frontend/build/"
 command="yarn build"
