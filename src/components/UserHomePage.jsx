@@ -8,7 +8,7 @@ const UserHomePage = () => {
         <div>
             <div className='homepage top'>Navbar and splash here</div>
             <div className='homepage bottom'>
-                <container className='mainBox'>
+                <div className='mainBox'>
                     <div className='subnav'>
                     <Link to='/contacts'>My Contacts</Link>
                     </div>
@@ -16,7 +16,7 @@ const UserHomePage = () => {
                      
                       <Route exact path='/contacts' render= {props => <ContactList {...props}/>} />  
                     </div>
-                </container>
+                </div>
             </div>
         </div>
     );

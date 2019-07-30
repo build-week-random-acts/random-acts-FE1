@@ -8,13 +8,13 @@ import { Route, Link } from 'react-router-dom';
 
 const ContactList = (props) =>{
   const [contacts, setContacts]   = useState([
-    {name:'Name', email: 'email@wherever.com', phone: '(800)555-0000', address:'13 Anywhere street, Everytown, tn 37334'}
+    {id: 0, name:'Name', email: 'email@wherever.com', phone: '(800)555-0000', address:'13 Anywhere street, Everytown, tn 37334'}
   ]);
   const addContacts = contact => {
-    setContacts([...contacts, contact]);
+    setContacts([...contacts, {...contact, id: Date.now()}]);
   };
   return(
-        <container className='contacts'>
+        <div className='contacts'>
             <div className='contactTop'>
               <div className='contactHeader'>
                 <h2>My Contacts</h2>
@@ -29,7 +29,7 @@ const ContactList = (props) =>{
               {contacts.map(contact=> <ContactCard contact={contact} />)}
             </div>
          
-        </container>
+        </div>
     )
 };
 
