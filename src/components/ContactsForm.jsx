@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Route, Link } from 'react-router-dom';
 const ContactsForm = (props) => {
-    const { submitContacts, initialPerson, buttonText, history } = props;
-    const [contact, setContact] = useState(initialPerson || {name:'', email:'', phone:'', address:''});
+     const initialAddState =  {id: null, name:'', email:'', phone:'', address:''}
+    const [contact, setContact] = useState(initialAddState);
 
 
     const handleChange = event => {
@@ -11,9 +11,11 @@ const ContactsForm = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        submitContacts(contact);
-        setContact([{name:'', email:'', phone:'', address:''}]);
-        history.push('/contacts');
+        if(!contact.name) return
+        
+        props.addContact(contact);
+        setContact(initialAddState);
+       
     };
     return(
         <form onSubmit={handleSubmit}>  
@@ -35,7 +37,7 @@ const ContactsForm = (props) => {
                    value={contact.address}
                    name='address'
                    onChange={handleChange}/>
-                   <button type='submit'>{buttonText}</button>
+                   <button type='submit'>Add Contact</button>
         </form>
     );
 };

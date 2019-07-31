@@ -7,13 +7,21 @@ import { Route, Link } from 'react-router-dom';
 
 
 const ContactCard = props => {
-  const { contact } = props;
-  return (
-    <Accordion>
+  
+  return(
+    props.contacts.map(contact => (
+    <Accordion key={contact.id}>
       <Card>
         <Accordion.Toggle as={Card.Header} eventKey="0">
           <div>{contact.name}</div>
-          <button>Edit</button>
+          <button onClick={() => {
+            props.editCard(contact)
+          }}>
+            Edit
+            </button>
+          <button onClick={() => props.deleteContact(contact.id)}>
+            Delete
+            </button>
           
           </Accordion.Toggle>
         <Accordion.Collapse eventKey="0">
@@ -30,7 +38,7 @@ const ContactCard = props => {
         
       </Card>
     </Accordion>
-  );
-};
+    
+    )))};
 
 export default ContactCard;
