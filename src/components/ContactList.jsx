@@ -46,24 +46,41 @@ import { Route, Link } from 'react-router-dom';
             <div className='contactTop'>
               <div className='contactHeader'>
                 <h2>My Contacts</h2>
-                <button>+</button>
+                <button onClick={() => setAdding(true)}>+</button>
               </div>
               
-              <div className='addForm'>
-                      <ContactsForm addContact={addContact} />
-                </div>
+              {adding ? (
+              <div>
+                <div className='addForm'>
+                
+                        <ContactsForm addContact={addContact} />
+                  </div>
+          
+              <div className='contactBottom'>
+                <ContactCard contacts={contacts}
+                              deleteContact={deleteContact}
+                              editCard = {editCard}
+                              editing={editing}
+                              setEditing={setEditing}
+                              currentContact={currentContact}
+                              updateContact={updateContact} />
               </div>
-            <div className='contactBottom'>
-              <ContactCard contacts={contacts}
-                            deleteContact={deleteContact}
-                            editCard = {editCard}
-                            editing={editing}
-                            setEditing={setEditing}
-                            currentContact={currentContact}
-                            updateContact={updateContact} />
-            </div>
-            
-        </div>)}
+              </div>
+              ) : (
+                
+                <div className='contactBottom'>
+                  <ContactCard contacts={contacts}
+                                deleteContact={deleteContact}
+                                editCard = {editCard}
+                                editing={editing}
+                                setEditing={setEditing}
+                                currentContact={currentContact}
+                                updateContact={updateContact} />
+                </div>
+              )}
+        </div>
+        </div>)
+  }
  
  
 
