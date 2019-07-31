@@ -1,16 +1,29 @@
-import React from 'react';
-import UserHomePage from './components/UserHomePage'
+import React, { useState, useEffect } from 'react';
+import UserHomePage from './components/UserHomePage';
 import LoginForm from './components/LoginForm';
-
+import Navbar from './components/Navbar';
+import { ActsContext } from './contexts/ActsContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Axios from 'axios';
 
 function App() {
+  const [acts, setActs] = useState([]);
+
+  useEffect(() => {
+    Axios.get('https://bfeole-randomacts.herokuapp.com/quotes/quotes')
+      .then(res => {
+        console.log('res from quotes', res.data);
+        setActs(res.data);
+      })
+      .catch(err => console.log(err));
+  }, []);
   return (
     <div>
-      
-      <LoginForm />
-      <UserHomePage />
-
-
+      <ActsContext.Provider value={{ acts }}>
+        <Navbar />
+        <LoginForm />
+        <ProtectedRoute exact path='/userhomepage' component={UserHomePage} />
+      </ActsContext.Provider>
     </div>
   );
 }
