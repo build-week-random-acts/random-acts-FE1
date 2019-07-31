@@ -1,21 +1,24 @@
 
 import React from 'react'
 import ContactList from './ContactList'
+import { Route, Link } from 'react-router-dom';
+import  ContactsForm from './ContactsForm';
 
 
-const UserHomePage = () => {
+
+const UserHomePage = (props) => {
+   console.log(props);
     return(
         <div>
             <div className='homepage top'>Navbar and splash here</div>
             <div className='homepage bottom'>
-                <container className='mainBox'>
+                <div className='mainBox'>
                     <div className='subnav'>
-                       subnav goes here
+                    <Link to='/contacts'>My Contacts</Link>
                     </div>
-                    <div className='componentBox'>
-                      <ContactList />  
-                    </div>
-                </container>
+                    <Route exact path='/contacts' render= 
+  {props => <ContactList {...props}/>}/>  
+                </div>
             </div>
         </div>
     );
