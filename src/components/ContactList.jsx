@@ -47,6 +47,8 @@ import { Route, Link } from 'react-router-dom';
               <div className='contactHeader'>
                 <h2>My Contacts</h2>
                 <button onClick={() => setAdding(true)}>+</button>
+                <button onClick={() => setAdding(false)}>-</button>
+
               </div>
               
               {adding ? (

@@ -12,7 +12,7 @@ const ContactsForm = (props) => {
     const handleSubmit = event => {
         event.preventDefault();
         if(!contact.name) return
-        
+
         props.addContact(contact);
         setContact(initialAddState);
        
@@ -37,7 +37,7 @@ const ContactsForm = (props) => {
                    value={contact.address}
                    name='address'
                    onChange={handleChange}/>
-                   <button type='submit'>Add Contact</button>
+                   <button type='submit' >Add Contact</button>
         </form>
     );
 };

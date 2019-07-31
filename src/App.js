@@ -9,20 +9,20 @@ import Axios from 'axios';
 function App() {
   const [acts, setActs] = useState([]);
 
-  useEffect(() => {
-    Axios.get('https://bfeole-randomacts.herokuapp.com/quotes/quotes')
-      .then(res => {
-        console.log('res from quotes', res.data);
-        setActs(res.data);
-      })
-      .catch(err => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   Axios.get('https://bfeole-randomacts.herokuapp.com/quotes/quotes')
+  //     .then(res => {
+  //       console.log('res from quotes', res.data);
+  //       setActs(res.data);
+  //     })
+  //     .catch(err => console.log(err));
+  // }, []);
   return (
     <div>
       <ActsContext.Provider value={{ acts }}>
         <Navbar />
         <LoginForm />
-        <ProtectedRoute exact path='/userhomepage' component={UserHomePage} />
+        <UserHomePage />
       </ActsContext.Provider>
     </div>
   );
