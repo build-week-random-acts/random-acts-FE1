@@ -16,13 +16,17 @@ import { Route, Redirect } from 'react-router-dom';
 // export default ProtectedRoute;
 
 export default function PrivateRoute({ component: Component, ...rest }) {
-  const loginToken = localStorage.getItem('token');
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        loginToken ? <Component {...props} /> : <Redirect to='/login' />
-      }
-    />
-  );
+  if (localStorage.getItem('token')) {
+    return <Route {...rest} render={props => <Component {...props} />} />;
+  } else {
+    return <Redirect to='/' />;
+  }
+  // return (
+  //   <Route
+  //     {...rest}
+  //     render={props =>
+  //       loginToken ? <Component {...props} /> : <Redirect to='/login' />
+  //     }
+  //   />
+  // );
 }

@@ -1,10 +1,7 @@
 import React from 'react';
 import ContactList from './ContactList';
-import { Route, Link } from 'react-router-dom';
-import Acts from './Acts';
 
 const UserHomePage = props => {
-  console.log(props);
   return (
     <div>
       <div className='homepage top' />
@@ -19,7 +16,6 @@ const UserHomePage = props => {
             render={props => <ContactList {...props} />}
           />*/}
           <ContactList />
-          <Acts />
         </div>
       </div>
     </div>

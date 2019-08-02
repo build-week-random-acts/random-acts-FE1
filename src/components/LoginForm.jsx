@@ -28,7 +28,7 @@ class LoginForm extends Component {
       })
       .then(res => {
         localStorage.setItem('token', res.data.access_token);
-        this.props.history.push('/');
+        this.props.history.push('/user');
       })
       .catch(err => console.log(err));
   };
@@ -42,7 +42,7 @@ class LoginForm extends Component {
       })
       .then(res => {
         localStorage.setItem('token', res.data.access_token);
-        this.props.history.push('/');
+        this.props.history.push('/user');
       })
       .catch(err => console.log(`error: ${err}`));
   };

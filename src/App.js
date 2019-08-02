@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import UserHomePage from './components/UserHomePage';
 import LoginForm from './components/LoginForm';
 import Navbar from './components/Navbar';
@@ -11,7 +11,7 @@ import axios from 'axios';
 
 import './styles.scss';
 
-function App() {
+function App(props) {
   const [acts, setActs] = useState([]);
   const [contacts, setContacts] = useState([
     {
@@ -70,13 +70,19 @@ function App() {
       })
       .catch(err => console.log(err));
   }, []);
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      props.history.push('/user');
+    } else {
+      props.history.push('/login');
+    }
+  }, []);
 
-  let randomAct = acts[Math.floor(Math.random() * acts.length)];
-  console.log('random act chosen', randomAct);
+  let randomAct =
+    acts.length > 0 && acts[Math.floor(Math.random() * acts.length)].quote;
 
   let randomContact =
     contacts[Math.floor(Math.random() * contacts.length)].fname;
-  console.log('random contact chosen', randomContact);
 
   return (
     <div>
@@ -88,7 +94,7 @@ function App() {
           <div className='container'>
             <Route path='/login' component={LoginForm} />
           </div>
-          <PrivateRoute path='/' exact component={UserHomePage} />
+          <PrivateRoute path='/user' exact component={UserHomePage} />
           <PrivateRoute path='/contacts' exact component={ContactList} />
           <PrivateRoute path='/acts' exact component={Acts} />
         </ActsContext.Provider>
@@ -97,4 +103,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
