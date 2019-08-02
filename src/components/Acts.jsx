@@ -8,7 +8,7 @@ const Acts = () => {
   // console.log('acts is', acts);
 
   return (
-    <div>
+    <div className='acts'>
       <h3>Random Acts</h3>
       {acts.map((act, index) => (
         <Act act={act} key={index} />

@@ -10,7 +10,6 @@ body {
 }
 .container {
   max-width: 1000px;
-  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -50,5 +49,93 @@ body {
   width: 8%;
   img {
     width: 100%;
+  }
+}
+
+// ***********
+// Header
+// ***********
+.contactTop{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.contactHeader{ 
+  background-color: $color-rust;
+  display: flex;
+  justify-content: center;
+ 
+
+
+
+  h2{
+    margin: 20px;
+    font-size: 6 em;
+  }
+
+  Button.btn-primary{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 50px;
+      background-color: $color-greyblue;
+      max-width: 50px;
+      margin: 20px 0 20px;
+      font-size: 2em;
+      text-align: center;
+      padding-top: 0;
+      border-color: $color-greyblue;
+      
+      
+  }
+// ***********
+// Contacts
+// ***********
+  
+}
+.card-header{
+  background-color: white;
+  font-size: 2em;
+
+  .btn-primary{
+    background-color: $color-greyblue;
+    outline: none;
+    border-color: $color-greyblue
+  }
+}
+.card-body{
+  font-size: 1.4em;
+}
+
+// ***********
+// Acts
+// ***********
+
+.acts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+
+  h3{
+    background-color: $color-lightpink;
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  div{
+    background-color: white;
+    margin: 0;
+    font-size: 1.2em;
+    padding: 20px;
+    
+    
+    &:hover {
+      background-color: $color-lightblue;
+    }
   }
 }

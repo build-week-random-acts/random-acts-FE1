@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button'
 // import axios from 'axios';
 import ContactCard from './ContactCard';
 import ContactsForm from './ContactsForm';
+
 
 const ContactList = () => {
   const contactArray = [
@@ -98,8 +100,8 @@ const ContactList = () => {
       <div className='contactTop'>
         <div className='contactHeader'>
           <h2>My Contacts</h2>
-          <button onClick={() => setAdding(true)}>+</button>
-          <button onClick={() => setAdding(false)}>-</button>
+          <Button id= 'plus' variant='primary' onClick={() => setAdding(true)}>+</Button>
+          <Button id= 'minus' variant = 'primary' onClick={() => setAdding(false)}>-</Button>
         </div>
 
         {adding ? (
