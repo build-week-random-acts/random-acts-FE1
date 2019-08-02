@@ -10,7 +10,6 @@ body {
 }
 .container {
   max-width: 1000px;
-  width: 70%;
   margin: 0 auto;
   text-align: center;
 }
@@ -92,7 +91,9 @@ body {
       
       
   }
-
+// ***********
+// Contacts
+// ***********
   
 }
 .card-header{
@@ -107,4 +108,34 @@ body {
 }
 .card-body{
   font-size: 1.4em;
+}
+
+// ***********
+// Acts
+// ***********
+
+.acts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+
+  h3{
+    background-color: $color-lightpink;
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  div{
+    background-color: white;
+    margin: 0;
+    font-size: 1.2em;
+    padding: 20px;
+    
+    
+    &:hover {
+      background-color: $color-lightblue;
+    }
+  }
 }
