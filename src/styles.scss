@@ -1,0 +1,54 @@
+//variables
+$color-offwhite: #f9fbf2;
+$color-lightpink: #ffede1;
+$color-lightblue: #d7f9ff;
+$color-rust: #d38d6c;
+$color-greyblue: #628395;
+
+body {
+  background: $color-offwhite;
+}
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.specialText {
+  color: $color-greyblue;
+  cursor: pointer;
+}
+.btn {
+  background: $color-rust;
+  color: $color-offwhite;
+  width: 100px;
+  &:hover {
+    color: $color-offwhite;
+    opacity: 0.9;
+  }
+}
+
+// ***********
+// Navbar
+// ***********
+.navbar {
+  background: white;
+  margin-bottom: 100px;
+  padding: 10px 100px;
+
+  .navlink {
+    text-decoration: none;
+    color: $color-greyblue;
+    margin: 0 10px;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+
+.img-container {
+  width: 8%;
+  img {
+    width: 100%;
+  }
+}
