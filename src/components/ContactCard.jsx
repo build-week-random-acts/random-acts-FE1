@@ -1,6 +1,8 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
 import EditContactsForm from './EditContactsForm';
 
 const ContactCard = props => {
@@ -9,16 +11,16 @@ const ContactCard = props => {
       <Card>
         <Accordion.Toggle as={Card.Header} eventKey='0'>
           <div>{contact.fname}</div>
-          <button
+          <Button
             onClick={() => {
               props.editCard(contact);
             }}
           >
             Edit
-          </button>
-          <button onClick={() => props.deleteContact(contact.id)}>
+          </Button>
+          <Button onClick={() => props.deleteContact(contact.id)}>
             Delete
-          </button>
+          </Button>
         </Accordion.Toggle>
         <Accordion.Collapse eventKey='0'>
           <Card.Body>
