@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 class LoginForm extends Component {
   state = {
@@ -78,6 +79,7 @@ class LoginForm extends Component {
         <p>
           Not a user? Click{' '}
           <span
+            className='specialText'
             onClick={() => this.setState({ loggingIn: !this.state.loggingIn })}
           >
             here
@@ -88,4 +90,4 @@ class LoginForm extends Component {
     );
   }
 }
-export default LoginForm;
+export default withRouter(LoginForm);
