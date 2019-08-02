@@ -17,7 +17,6 @@ class Navbar extends Component {
 
   render() {
     const { open } = this.state;
-    console.log('props is', this.props);
     return (
       <div className='navbar'>
         <div className='img-container'>
@@ -35,9 +34,19 @@ class Navbar extends Component {
             Generate an Act
             <Modal open={open} onClose={this.onCloseModal} center>
               <h3>The random act generated for you is: </h3>
-              <p>{`The person selected is ${this.props.randomContact}`}</p>
+              <p>{`The random act selected is ${this.props.randomAct}`}</p>
               <p>{`The person selected is ${this.props.randomContact}`}</p>
             </Modal>
+          </Link>
+          <Link
+            className='navlink'
+            onClick={() => {
+              localStorage.removeItem('token');
+              document.location.reload();
+            }}
+            to='/login'
+          >
+            Logout
           </Link>
         </div>
       </div>
