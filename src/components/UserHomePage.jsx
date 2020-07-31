@@ -1,3 +1,5 @@
+import React from 'react';
+import ContactList from './ContactList';
 
 import React from 'react'
 import ContactList from './ContactList'
@@ -18,8 +20,10 @@ const UserHomePage = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    );
-}
-export default UserHomePage;
 
+        </div>
+      </div>
+    </div>
+  );
+};
+export default UserHomePage;

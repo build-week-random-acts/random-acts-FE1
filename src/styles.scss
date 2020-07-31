@@ -1,0 +1,141 @@
+//variables
+$color-offwhite: #f9fbf2;
+$color-lightpink: #ffede1;
+$color-lightblue: #d7f9ff;
+$color-rust: #d38d6c;
+$color-greyblue: #628395;
+
+body {
+  background: $color-offwhite;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.specialText {
+  color: $color-greyblue;
+  cursor: pointer;
+}
+.btn {
+  background: $color-rust;
+  color: $color-offwhite;
+  width: 100px;
+  &:hover {
+    color: $color-offwhite;
+    opacity: 0.9;
+  }
+}
+
+// ***********
+// Navbar
+// ***********
+.navbar {
+  background: white;
+  margin-bottom: 100px;
+  padding: 10px 100px;
+
+  .navlink {
+    text-decoration: none;
+    color: $color-greyblue;
+    margin: 0 10px;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+
+.img-container {
+  width: 8%;
+  img {
+    width: 100%;
+  }
+}
+
+// ***********
+// Header
+// ***********
+.contactTop{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.contactHeader{ 
+  background-color: $color-rust;
+  display: flex;
+  justify-content: center;
+ 
+
+
+
+  h2{
+    margin: 20px;
+    font-size: 6 em;
+  }
+
+  Button.btn-primary{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 50px;
+      background-color: $color-greyblue;
+      max-width: 50px;
+      margin: 20px 0 20px;
+      font-size: 2em;
+      text-align: center;
+      padding-top: 0;
+      border-color: $color-greyblue;
+      
+      
+  }
+// ***********
+// Contacts
+// ***********
+  
+}
+.card-header{
+  background-color: white;
+  font-size: 2em;
+
+  .btn-primary{
+    background-color: $color-greyblue;
+    outline: none;
+    border-color: $color-greyblue
+  }
+}
+.card-body{
+  font-size: 1.4em;
+}
+
+// ***********
+// Acts
+// ***********
+
+.acts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+
+  h3{
+    background-color: $color-lightpink;
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  div{
+    background-color: white;
+    margin: 0;
+    font-size: 1.2em;
+    padding: 20px;
+    
+    
+    &:hover {
+      background-color: $color-lightblue;
+    }
+  }
+}

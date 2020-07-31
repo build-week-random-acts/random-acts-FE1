@@ -1,3 +1,4 @@
+
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
@@ -24,6 +25,7 @@ const ContactCard = props => {
               <div>{contact.phone}</div>
               <div>{contact.address}</div>
             </div>
+
           </Card.Body>
         </Accordion.Collapse>
       </Card>

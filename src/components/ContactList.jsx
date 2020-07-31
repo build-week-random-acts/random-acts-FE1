@@ -1,9 +1,56 @@
 import React, { useState } from 'react';
+
 import ContactCard from './ContactCard';
 import ContactsForm from './ContactsForm';
 import { Route, Link } from 'react-router-dom';
 
+const ContactList = () => {
+  const contactArray = [
+    {
+      id: 2,
+      fname: 'Jose',
+      lname: 'M',
+      email: 'jose@mail.com',
+      phone: '555-555-5555',
+    },
+    {
+      id: 3,
+      fname: 'Brittany',
+      lname: 'M',
+      email: 'brittanyh@mail.com',
+      phone: '555-555-5555',
+    },
+    {
+      id: 4,
+      fname: 'Ben',
+      lname: 'F',
+      email: 'ben@mail.com',
+      phone: '555-555-5555',
+    },
+    {
+      id: 5,
+      fname: 'Brian',
+      lname: 'M',
+      email: 'brian@mail.com',
+      phone: '555-555-5555',
+    },
+    {
+      id: 6,
+      fname: 'Sara',
+      lname: 'A',
+      email: 'sara@mail.com',
+      phone: '555-555-5555',
+    },
+  ];
+  const initialFormState = {
+    id: null,
+    fname: '',
+    lname: '',
+    email: '',
+    phone: '',
+  };
 
+  const [contacts, setContacts] = useState(contactArray);
 
 
 const ContactList = (props) =>{
@@ -31,6 +78,7 @@ const ContactList = (props) =>{
          
         </div>
     )
+
 };
 
-export default ContactList
+export default ContactList;

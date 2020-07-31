@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 class LoginForm extends Component {
   state = {
@@ -27,7 +28,7 @@ class LoginForm extends Component {
       })
       .then(res => {
         localStorage.setItem('token', res.data.access_token);
-        this.props.history.push('/');
+        this.props.history.push('/user');
       })
       .catch(err => console.log(err));
   };
@@ -41,7 +42,7 @@ class LoginForm extends Component {
       })
       .then(res => {
         localStorage.setItem('token', res.data.access_token);
-        this.props.history.push('/');
+        this.props.history.push('/user');
       })
       .catch(err => console.log(`error: ${err}`));
   };
@@ -78,6 +79,7 @@ class LoginForm extends Component {
         <p>
           Not a user? Click{' '}
           <span
+            className='specialText'
             onClick={() => this.setState({ loggingIn: !this.state.loggingIn })}
           >
             here
@@ -88,4 +90,4 @@ class LoginForm extends Component {
     );
   }
 }
-export default LoginForm;
+export default withRouter(LoginForm);
